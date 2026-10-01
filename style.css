@@ -8,7 +8,7 @@
 
 body {
   padding-top: 80px;
-  height: 7000px;
+
 }
 
 header {
@@ -26,6 +26,7 @@ nav {
   justify-content: space-between;
   max-width: 1700px;
   margin: 0 auto;
+  padding: 0 10px;
 }
 
 .nav-left {
@@ -67,6 +68,24 @@ nav {
   color: rgba(255, 255, 255, 1);
   font-family: "Sora", sans-serif;
 }
+
+.nav-right a:nth-child(1),
+.nav-right a:nth-child(2),
+.nav-right a:nth-child(3),
+.nav-right a:nth-child(4),
+.nav-right a:nth-child(5) {
+  transition: text-decoration 0.1s ease, text-undrline-offset 0.3s ease;
+}
+
+.nav-right a:nth-child(1):hover,
+.nav-right a:nth-child(2):hover,
+.nav-right a:nth-child(3):hover,
+.nav-right a:nth-child(4):hover,
+.nav-right a:nth-child(5):hover {
+  text-decoration: underline solid #B65CD9 2px;
+  text-underline-offset: 8px;
+}
+
 
 .nav-right a:nth-child(6) {
   display: flex;
@@ -345,23 +364,26 @@ main {
 
 .use-cases-section {
   margin: -170px auto 70px;
-  max-width: 1500px;
+  max-width: 1450px;
   /* padding-bottom: 100px; */
 }
 
-.use-cases-section-cont {
+.use-cases-section-cont,
+.Pricing-section-cont {
   text-align: center;
   margin-bottom: 30px;
 }
 
-.use-cases-section-cont h2 {
+.use-cases-section-cont h2,
+.Pricing-section-cont h2 {
   font-family: "Orbitron", sans-serif;
   font-size: 36px;
   font-weight: 600;
   color: #FFFFFF;
 }
 
-.use-cases-section-cont p {
+.use-cases-section-cont p,
+.Pricing-section-cont p {
   font-family: "Sora", sans-serif;
   color: #FFFFFF;
   font-size: 17px;
@@ -442,4 +464,251 @@ main {
   color: transparent;
   -webkit-text-fill-color: transparent;
   text-decoration: none;
+}
+
+.Pricing-section {
+  max-width: 1450px;
+  margin: 0 auto;
+  padding-bottom: 70px;
+}
+
+.Pricing-section-cont2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* place-items: center; */
+  gap: 30px;
+}
+
+.pricing-card,
+.pricing-card2,
+.pricing-card3 {
+  padding: 60px 15px;
+  border-radius: 20px;
+}
+
+.pricing-card {
+  background-color: rgb(37, 20, 40);
+  transition: transform 0.3s ease;
+}
+
+.pricing-card2 {
+  background: linear-gradient(to right, rgb(51, 26, 62), rgb(19, 12, 40));
+  transition: transform 0.3s ease;
+}
+
+.pricing-card3 {
+  background: linear-gradient(to right, rgb(46, 17, 68), rgb(43, 16, 66));
+  transition: transform 0.3s ease;
+}
+
+.pricing-card:hover,
+.pricing-card2:hover,
+.pricing-card3:hover {
+  transform: translateY(-10px);
+}
+
+.pricing-card h2,
+.pricing-card2 h2,
+.pricing-card3 h2 {
+  color: #fff;
+  font-family: "Orbitron", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.pricing-card > :nth-child(2),
+.pricing-card2 > :nth-child(2),
+.pricing-card3 > :nth-child(2)  {
+  font-size: 36px;
+  font-family: "Sora", sans-serif;
+  color: #fff;
+  font-weight: 600;
+}
+
+.pricing-card > :nth-child(2) span,
+.pricing-card2 > :nth-child(2) span,
+.pricing-card3 > :nth-child(2) span {
+  font-size: 14px;
+  color: rgb(62, 55, 63);
+  font-weight: 400;
+}
+
+.checkmarks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.checkmarks p{
+  display: flex;
+  align-items: center;
+  color: #ffff;
+  font-family: "Sora", sans-serif;
+  font-size: 14px;
+  gap: 8px;
+  font-weight: 400;
+}
+
+.pricing-card > :last-child,
+.pricing-card3 > :last-child {
+  text-decoration: none;
+  font-size: 16px;
+  font-family: "Sora", sans-serif;
+  color: #ffff;
+  text-align: center;
+  border: 1px solid;
+  border-color: #174993 #892CAE  #892CAE  #174993;
+  display: block;
+  padding: 10px 0;
+  border-radius: 20px;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.pricing-card > :last-child::before,
+.pricing-card3 > :last-child::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgb(26, 72, 148), rgb(133, 45, 174));
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: -1;        
+}
+
+.pricing-card > :last-child:hover::before,
+.pricing-card3 > :last-child:hover::before {
+  opacity: 1;
+}
+
+.pricing-card2 > :last-child {
+  text-decoration: none;
+  font-size: 16px;
+  font-family: "Sora", sans-serif;
+  color: #ffff;
+  text-align: center;
+  background: linear-gradient(to right, rgb(26, 72, 148), rgb(133, 45, 174));
+  display: flex;
+  align-items: center;
+  /* text-align: center; */
+  justify-content: center;
+  padding: 10px 0;
+  border-radius: 20px;
+}
+
+.pricing-card2 > :last-child img {
+  transition: transform 0.4s ease;
+}
+
+.pricing-card2 > :last-child:hover img{
+  transform: translatex(5px);
+}
+
+/* .pricing-card2 a {
+  display: flex;
+  align-items: center;
+} */
+
+footer {
+  background: linear-gradient( to right, rgb(40, 22, 47), rgb(3, 4, 20));
+}
+
+.footer-cont {
+  max-width: 1700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  /* gap: 70px; */
+  padding: 30px 20px;
+}
+
+.footer-top {
+  display: flex;
+  gap: 70px;
+}
+.footer-top-left h2 {
+  font-family: "Orbitron", sans-serif;
+  color: rgb(154, 141, 156);
+  font-weight: 700;
+  margin-bottom: 15px;
+
+}
+
+.footer-top-left p {
+  color: rgb(154, 141, 156);
+  font-family: "Sora", sans-serif;
+  font-size: 16px;
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.socials a:hover {
+  transform: translatey(-3px);
+}
+
+.socials a {
+  transition: transform 0.3s ease;
+}
+
+.socials a img{
+  filter: grayscale(0.5) opacity(0.6);
+}
+
+.footer-top-right h2 {
+  font-family: "Orbitron", sans-serif;
+  color: rgb(154, 141, 156);
+  font-weight: 500;
+  margin-bottom: 15px;
+
+}
+
+.footer-top-left h2 img {
+  width: 20px;
+  filter: grayscale(0.5) opacity(0.6);
+  /* opacity: 30px; */
+}
+
+.footer-top-right {
+  display: flex;
+  width: 70%;
+  /* justify-content: flex-end; */
+  justify-content: space-between;
+
+}
+
+.footer-top-right1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-top-right1 a {
+  text-decoration: none;
+  font-weight: 400;
+  color: rgb(154, 141, 156);
+  font-family: "Sora", sans-serif;
+  margin-bottom: 10px;
+}
+
+.footer-bottom {
+  color: #434141;
+  font-family: "Sora", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  border-top: 2px solid rgb(60, 47, 61);
+  padding-top: 12px;
+  margin-top: 20px;
+}
+
+.footer-bottom p {
+  display: flex;
+  gap: 10px;
 }
